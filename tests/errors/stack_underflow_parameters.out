@@ -1,7 +1,0 @@
-ERROR (add): stack underflow
-ERROR (sub): stack underflow
-ERROR (mul): stack underflow
-ERROR (div): stack underflow
-ERROR (mod): stack underflow
-ERROR (print): stack underflow
-[ ]

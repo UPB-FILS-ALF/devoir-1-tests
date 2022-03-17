@@ -1,7 +1,0 @@
-ERROR (read): stack underflow
-ERROR (write): stack underflow
-ERROR (read): wrong address 1500
-ERROR (write): wrong address 1500
-ERROR (read): wrong address -1000
-ERROR (write): wrong address -1000
-[ 1 -1000 ]
