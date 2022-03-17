@@ -3,9 +3,9 @@
 for folder in tests/*
 do
     rm "$folder"/*.out
-    for file in "$folder"/*.asm 
+    for file in "$folder"/*.a 
     do
         echo $file
-        node ../index.js "$file" > "$folder"/$(basename $file .asm).out 1024
+        node ../index.js $(cat "$file") > "$folder"/$(basename $file .a).out
     done
 done
