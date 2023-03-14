@@ -7,7 +7,10 @@ function run_test {
     filename="$dir/tests/$1"
     outputname="$(dirname $filename)/$(basename $1 .a).out"
     echo Running $filename
-    node $dir/../index.js $(cat $filename) > output
+    # node "$dir/../index.js" "$(cat $filename)" > output
+    cd "$dir/../src/main/java/"
+    javac org/example/*.java > output
+    java org/example/Main.java $(cat $filename) > output
     ERROR=0
     if ! diff output $outputname -Z --side-by-side > error; 
     then
