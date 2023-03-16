@@ -10,7 +10,7 @@ function run_test {
     # node "$dir/../index.js" "$(cat $filename)" > output
     cd "$dir/../src/main/java/"
     javac org/example/*.java > output
-    java org/example/Main.java $(cat $filename) > output
+    java org/example/Main $(cat $filename) > output
     ERROR=0
     if ! diff output $outputname -Z --side-by-side > error; 
     then
