@@ -5,7 +5,7 @@ dir="$(dirname $0)"
 function run_test {
     rm -rf output
     pwd
-    filename="$dir/../devoir-1-tests/tests/$1"
+    filename="$dir/devoir-1-tests/tests/$1"
     outputname="$(dirname $filename)/$(basename $1 .a).out"
     echo Running $filename
     # node "$dir/../index.js" "$(cat $filename)" > output
