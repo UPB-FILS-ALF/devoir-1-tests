@@ -7,8 +7,10 @@ function run_test {
     filename="$dir/tests/$1"
     outputname="$(dirname $filename)/$(basename $1 .asm).out"
     echo Running $filename
-    node $dir/../index.js $filename > output 100
+    cd ..
+    ./gradlew run -q --args="$1" > devoir-1-tests/output
     ERROR=0
+    cd devoir-1-tests
     if ! diff output $outputname -Z --side-by-side > error; 
     then
         echo "Your output                                                   | Correct output"
