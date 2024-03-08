@@ -8,7 +8,9 @@ function run_test {
     outputname="$(dirname $filename)/$(basename $1 .asm).out"
     echo Running $filename
     cd ..
-    ./gradlew run -q --args="$1" > devoir-1-tests/output
+    file=$1
+    path_with_dir="devoir-1-tests/tests/${file:2}"
+    ./gradlew run -q --args=$path_with_dir > devoir-1-tests/output
     ERROR=0
     cd devoir-1-tests
     if ! diff output $outputname -Z --side-by-side > error; 
