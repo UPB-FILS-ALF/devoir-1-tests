@@ -9,8 +9,14 @@ function run_test {
     echo Running $filename
     cd ..
     file=$1
+    pathComponents=(${file//// })
     path_with_dir="devoir-1-tests/tests/${file:2}"
-    ./gradlew run -q --args=$path_with_dir > devoir-1-tests/output
+    if [ ${pathComponents[1]} = "bonus" ]
+    then
+        ./gradlew run -q --args="$path_with_dir 1024" > devoir-1-tests/output
+    else
+        ./gradlew run -q --args=$path_with_dir > devoir-1-tests/output
+    fi
     ERROR=0
     cd devoir-1-tests
     if ! diff output $outputname -Z --side-by-side > error; 
