@@ -10,7 +10,7 @@ function run_test {
     cd ..
     file=$1
     pathComponents=(${file//// })
-    path_with_dir="devoir-1-tests/tests/${file:2}"
+    path_with_dir="../devoir-1-tests/tests/${file:2}"
     if [ ${pathComponents[1]} = "bonus" ]
     then
         ./gradlew run -q --args="$path_with_dir 1024" > devoir-1-tests/output
