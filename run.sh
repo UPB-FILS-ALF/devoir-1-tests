@@ -15,7 +15,7 @@ function run_test {
     then
         timeout 50 ./gradlew run -q --args="$path_with_dir 1024" > devoir-1-tests/output
     else
-        timeour 50 ./gradlew run -q --args=$path_with_dir > devoir-1-tests/output
+        timeout 50 ./gradlew run -q --args=$path_with_dir > devoir-1-tests/output
     fi
     ERROR=0
     cd devoir-1-tests
