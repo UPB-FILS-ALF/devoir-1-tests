@@ -13,9 +13,9 @@ function run_test {
     path_with_dir="../devoir-1-tests/tests/${file:2}"
     if [ ${pathComponents[1]} = "bonus" ]
     then
-        ./gradlew run -q --args="$path_with_dir 1024" > devoir-1-tests/output
+        timeout 50 ./gradlew run -q --args="$path_with_dir 1024" > devoir-1-tests/output
     else
-        ./gradlew run -q --args=$path_with_dir > devoir-1-tests/output
+        timeour 50 ./gradlew run -q --args=$path_with_dir > devoir-1-tests/output
     fi
     ERROR=0
     cd devoir-1-tests
